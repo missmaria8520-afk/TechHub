@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Package, Calendar, DollarSign } from "lucide-react";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import { BASE_URL } from "../api/axios";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -108,7 +109,7 @@ const Orders = () => {
                       >
                         <div className="flex items-center">
                           <img
-                            src={item.productId.image || "/placeholder.jpg"}
+                            src={`http://localhost:3001/public/${item.productId.images?.[0]}`}
                             alt={item.productId.productName}
                             className="w-16 h-16 object-cover rounded-md mr-4"
                           />
@@ -122,7 +123,7 @@ const Orders = () => {
                           </div>
                         </div>
                         <p className="font-semibold text-gray-900">
-                          Rs.{" "}
+                          £.{" "}
                           {(item.productId.price * item.quantity).toFixed(2)}
                         </p>
                       </div>
@@ -150,7 +151,7 @@ const Orders = () => {
                           <span>Total</span>
                         </div>
                         <span className="font-bold text-lg text-green-600">
-                          Rs. {calculateOrderTotal(order.orderItems)}
+                          £. {calculateOrderTotal(order.orderItems)}
                         </span>
                       </div>
                       <div className="flex justify-between text-sm text-gray-500">

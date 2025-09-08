@@ -112,12 +112,12 @@ const AdminAllOrders = () => {
                   >
                     <span>{item.productId?.productName}</span>
                     <span>
-                      {item.quantity} × Rs. {item.productId?.price?.toFixed(2)}
+                      {item.quantity} × £. {item.productId?.price?.toFixed(2)}
                     </span>
                   </div>
                 ))}
                 <div className="text-right font-semibold text-green-600">
-                  Total: Rs. {order.totalAmount.toFixed(2)}
+                  Total: £. {order.totalAmount.toFixed(2)}
                 </div>
               </div>
             </div>

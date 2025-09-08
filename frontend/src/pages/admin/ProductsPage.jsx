@@ -39,6 +39,8 @@ const ProductsPage = () => {
       }
 
       const response = await axiosPrivate.get(`/v1/products?${params}`);
+
+      console.log(response);
       
       if (response.data.success) {
         setProducts(response.data.data || []);
@@ -267,17 +269,17 @@ const ProductsPage = () => {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Rs. {product.price?.toLocaleString()}
+                      £. {product.price?.toLocaleString()}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
-                        product.stock > 10 
+                        product.inStock > 10 
                           ? 'bg-green-100 text-green-800' 
-                          : product.stock > 0 
+                          : product.inStock > 0 
                           ? 'bg-yellow-100 text-yellow-800'
                           : 'bg-red-100 text-red-800'
                       }`}>
-                        {product.stock || 0}
+                        {product.inStock || 0}
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">

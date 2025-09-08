@@ -49,10 +49,10 @@ export default function ProductCard({
         {/* Price + Button */}
         <div className="mt-auto flex items-center justify-between">
           <div>
-            <p className="text-green-600 font-bold text-xl">Rs. {price}</p>
+            <p className="text-green-600 font-bold text-xl">£. {price}</p>
             {oldPrice && (
               <p className="text-gray-400 text-sm line-through">
-                Rs. {oldPrice}
+                £. {oldPrice}
               </p>
             )}
           </div>

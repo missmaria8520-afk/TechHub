@@ -73,12 +73,12 @@ const CheckoutPage = () => {
                   <div>
                     <p className="font-medium">{item.productId.productName}</p>
                     <p className="text-sm text-gray-500">
-                      Qty: {item.quantity} × Rs.{" "}
+                      Qty: {item.quantity} × £.{" "}
                       {item.productId.price.toFixed(2)}
                     </p>
                   </div>
                   <p className="font-bold text-green-600">
-                    Rs. {(item.quantity * item.productId.price).toFixed(2)}
+                    £. {(item.quantity * item.productId.price).toFixed(2)}
                   </p>
                 </div>
               ))}
@@ -87,7 +87,7 @@ const CheckoutPage = () => {
             {/* Total */}
             <div className="flex justify-between text-lg font-semibold">
               <span>Total</span>
-              <span>Rs. {calculateTotal()}</span>
+              <span>£. {calculateTotal()}</span>
             </div>
 
             {/* Payment Method */}

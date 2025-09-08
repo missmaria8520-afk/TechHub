@@ -59,7 +59,7 @@ exports.getAdminStats = async (req, res) => {
         textColor: "text-purple-700",
       },
       {
-        label: "Total Earnings (NPR)",
+        label: "Total Earnings",
         value: totalEarnings.toFixed(2),
         color: "bg-teal-100",
         textColor: "text-teal-700",

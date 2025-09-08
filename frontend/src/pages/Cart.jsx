@@ -113,7 +113,7 @@ const Cart = () => {
                       {item.productId.productName}
                     </h3>
                     <p className="text-gray-600">
-                      ${item.productId.price.toFixed(2)}
+                      £{item.productId.price.toFixed(2)}
                     </p>
                   </div>
                   <div className="flex items-center space-x-2 mr-4">
@@ -136,7 +136,7 @@ const Cart = () => {
                     </button>
                   </div>
                   <div className="font-bold text-green-600 mr-4">
-                    ${(item.quantity * item.productId.price).toFixed(2)}
+                    £{(item.quantity * item.productId.price).toFixed(2)}
                   </div>
                   <button
                     onClick={() => removeItem(item.productId._id)}
@@ -154,17 +154,17 @@ const Cart = () => {
               <div className="space-y-4">
                 <div className="flex justify-between">
                   <span className="text-gray-700">Subtotal</span>
-                  <span className="font-bold">Rs. {calculateTotal()}</span>
+                  <span className="font-bold">£. {calculateTotal()}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-700">Delivery</span>
-                  <span className="font-bold">Rs. 10</span>
+                  <span className="font-bold">£. 10</span>
                 </div>
                 <hr className="my-2" />
                 <div className="flex justify-between font-bold text-lg">
                   <span>Total</span>
                   <span>
-                    Rs. {(parseFloat(calculateTotal()) + 5).toFixed(2)}
+                    £. {(parseFloat(calculateTotal()) + 5).toFixed(2)}
                   </span>
                 </div>
               </div>
